@@ -1,17 +1,13 @@
 %{
-#include<stdio.h>
 %}
-
 %%
-[6-9][0-9]{9} {printf("%s, is a mobile number", yytext);}
-.+ {printf("The Mobile Number is Invalid");}
+[0-9][0-9]{9} {printf("valid number\n");}
+.+ {printf("invalid");}
 %%
+int yywrap()
+{}
 int main()
 {
-printf("\n Enter the mobile number:");	
+printf("enter the mobile number:");
 yylex();
-}
-int yywrap()
-{
-return 1;
 }
